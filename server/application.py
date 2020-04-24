@@ -1,6 +1,10 @@
 from flask import Flask, request, session, escape, jsonify
 import json
 
+filename = "personal.json"
+with open(filename) as f:
+    personal = json.load(f)
+    
 # some bits of text for the page.
 header_text = '''
     <html>\n<head> <title>Pocket Auto Chess</title> </head>\n<body>'''
@@ -19,7 +23,7 @@ def get_key():
     return 1
 
 # set the secret key.  keep this really secret:
-application.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+application.secret_key = person["secret_key"]
 
 @application.route("/test", methods=["GET"])
 def push_test(url):
