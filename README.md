@@ -1,7 +1,3 @@
 # linebot
 
-## 環境構築
-```command line
-pip install pipenv
-pipenv run
-```
+python3 flask + AWS
